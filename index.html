@@ -1,0 +1,299 @@
+<!doctype html>
+<html lang="en" data-theme="system">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Hao Zhang 张昊 — Homepage</title>
+  <meta name="description" content="Hao Zhang (张昊) — PhD student @ UIUC. Research: 3D/4D Reconstruction & Generation, Animation & Rigging, Physical Simulation." />
+  <!-- Open Graph / Twitter -->
+  <meta property="og:title" content="Hao Zhang — Homepage" />
+  <meta property="og:description" content="PhD student @ UIUC. 3D/4D Reconstruction & Generation, Animation & Rigging, Physical Simulation." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://haoz19.github.io" />
+  <meta property="og:image" content="https://unavatar.io/github/haoz19" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='0.9em' font-size='90'>✨</text></svg>">
+  <style>
+    :root {
+      --bg: #0b0c0e; --card: #101215; --text: #e8eaed; --muted: #9aa0a6; --brand: #7dd3fc; --accent: #a78bfa; --link: #93c5fd; --border: #1e2227; --shadow: 0 10px 25px rgba(0,0,0,.25);
+      --radius-lg: 18px; --radius-md: 14px; --radius-sm: 10px;
+    }
+    @media (prefers-color-scheme: light) {
+      html[data-theme="system"]:root { --bg:#fbfbfd; --card:#ffffff; --text:#0b1323; --muted:#475569; --brand:#0ea5e9; --accent:#7c3aed; --link:#2563eb; --border:#e5e7eb; --shadow: 0 8px 18px rgba(0,0,0,.08); }
+    }
+    html[data-theme="dark"]:root { --bg:#0b0c0e; --card:#101215; --text:#e8eaed; --muted:#9aa0a6; --brand:#7dd3fc; --accent:#a78bfa; --link:#93c5fd; --border:#1e2227; --shadow: 0 10px 25px rgba(0,0,0,.25); }
+    html[data-theme="light"]:root { --bg:#fbfbfd; --card:#ffffff; --text:#0b1323; --muted:#475569; --brand:#0ea5e9; --accent:#7c3aed; --link:#2563eb; --border:#e5e7eb; --shadow: 0 8px 18px rgba(0,0,0,.08); }
+
+    *{box-sizing:border-box}
+    body{margin:0;font:16px/1.6 system-ui,-apple-system,Segoe UI,Roboto,"Helvetica Neue",Arial,"Noto Sans";background:
+      radial-gradient(1200px 600px at 80% -10%, rgba(124,58,237,.12), transparent 60%),
+      radial-gradient(900px 500px at -10% 20%, rgba(14,165,233,.12), transparent 60%), var(--bg); color:var(--text)}
+    a{color:var(--link);text-decoration:none} a:hover{text-decoration:underline}
+    .container{max-width:1060px;margin:0 auto;padding:24px}
+    .topbar{position:sticky;top:0;z-index:10;backdrop-filter:saturate(180%) blur(8px);background:color-mix(in oklab,var(--bg) 78%,transparent);border-bottom:1px solid var(--border)}
+    .topbar__inner{display:flex;align-items:center;justify-content:space-between;padding:10px 24px}
+    .brand{display:flex;align-items:center;gap:12px}
+    .brand__avatar{width:42px;height:42px;border-radius:50%;border:1px solid var(--border);box-shadow:var(--shadow);object-fit:cover}
+    nav a{margin:0 10px;font-weight:600;color:var(--text);opacity:.85} nav a:hover{opacity:1}
+    .theme-toggle{border:1px solid var(--border);background:var(--card);color:var(--text);border-radius:999px;padding:6px 10px;cursor:pointer}
+
+    /* Hero */
+    .hero{display:grid;grid-template-columns:160px 1fr;gap:24px;align-items:center;margin-top:18px;padding:24px;background:var(--card);border:1px solid var(--border);border-radius:var(--radius-lg);box-shadow:var(--shadow)}
+    .hero .portrait{width:160px;height:160px;border-radius:14px;border:1px solid var(--border);object-fit:cover}
+    .subtitle{color:var(--muted);margin-top:4px}
+    .links{display:flex;flex-wrap:wrap;gap:10px;margin-top:10px}
+    .pill{display:inline-flex;align-items:center;gap:8px;border:1px solid var(--border);background:color-mix(in oklab,var(--card),transparent 10%);padding:6px 10px;border-radius:999px}
+
+    /* Section */
+    section{background:var(--card);border:1px solid var(--border);border-radius:var(--radius-lg);padding:22px;box-shadow:var(--shadow);margin-top:18px}
+    section h2{margin:0 0 8px;font-size:20px}
+    .muted{color:var(--muted);font-size:14px}
+
+    /* Media Card (image on the left) */
+    .media-list{display:grid;gap:12px;margin:0;padding:0;list-style:none}
+    .media{display:grid;grid-template-columns:140px 1fr;gap:14px;border:1px solid var(--border);border-radius:var(--radius-md);background:color-mix(in oklab,var(--card),transparent 6%);overflow:hidden}
+    .media:hover{transform:translateY(-1px);transition:transform .18s ease}
+    .thumb{width:100%;height:100%;aspect-ratio:4/3;object-fit:cover;background:#0b0c0e}
+    .thumb-wrap{position:relative}
+    .badge{position:absolute;bottom:8px;left:8px;background:color-mix(in oklab,var(--brand),transparent 20%);color:#00131a;font-weight:700;padding:2px 8px;border-radius:999px;font-size:12px;border:1px solid var(--border)}
+    .media-body{padding:12px 12px}
+    .title{font-weight:700}
+    .meta{font-size:14px;color:var(--muted)}
+    .links a{margin-right:10px}
+
+    /* Two-column grid for Experience & Education */
+    .grid-2{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+    @media (max-width:900px){.hero{grid-template-columns:1fr}.grid-2{grid-template-columns:1fr}.media{grid-template-columns:1fr}}
+
+    footer{color:var(--muted);text-align:center;padding:28px 12px 60px}
+    .sep{height:1px;background:var(--border);margin:14px 0}
+    .kbd{font-family:ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,monospace;font-size:13px;padding:2px 6px;border-radius:6px;border:1px solid var(--border);background:color-mix(in oklab,var(--card),transparent 10%)}
+  </style>
+</head>
+<body>
+  <header class="topbar">
+    <div class="topbar__inner container">
+      <div class="brand">
+        <img class="brand__avatar" src="https://unavatar.io/github/haoz19" alt="Avatar"/>
+        <div class="brand__name">Hao Zhang <span class="muted">张昊</span></div>
+      </div>
+      <nav>
+        <a href="#about">About</a>
+        <a href="#news">News</a>
+        <a href="#publications">Publications</a>
+        <a href="#experience">Experience</a>
+        <a href="#education">Education</a>
+        <a href="#activities">Activities</a>
+        <button id="themeBtn" class="theme-toggle" title="Toggle theme">🌓</button>
+      </nav>
+    </div>
+  </header>
+
+  <main id="content" class="container">
+    <!-- HERO -->
+    <section id="about" class="hero">
+      <img class="portrait" src="https://unavatar.io/github/haoz19" alt="Hao Zhang"/>
+      <div>
+        <h1>Hao Zhang <span class="muted">张昊</span></h1>
+        <div class="subtitle">PhD Student @ UIUC · Research: 3D/4D Reconstruction/Generation, Animation &amp; Rigging, Physical Simulation</div>
+        <div class="links">
+          <a class="pill" href="mailto:hzhang12@illinois.edu">✉️ Email</a>
+          <a class="pill" href="https://twitter.com/haoz19" target="_blank" rel="noreferrer">𝕏 Twitter</a>
+          <a class="pill" href="https://github.com/haoz19" target="_blank" rel="noreferrer">💻 GitHub</a>
+          <a class="pill" href="https://scholar.google.com/citations?user=qQ3b8iUAAAAJ" target="_blank" rel="noreferrer">📚 Google Scholar</a>
+          <a class="pill" href="/assets/CV.pdf" target="_blank" rel="noreferrer">📄 CV</a>
+        </div>
+        <p style="margin-top:12px">I am a PhD student in ECE at UIUC, and a Research Scientist Intern at Snap Research. I work on 3D/4D Reconstruction and Generation, Animation & Rigging, and Physical Simulation in 3D Vision.</p>
+        <p class="muted">If you’re switching majors, taking a gap year, and feeling anxious—I’m happy to chat (WeChat: <span class="kbd">zh17603602632</span>).</p>
+      </div>
+    </section>
+
+    <!-- NEWS -->
+    <section id="news">
+      <h2>News</h2>
+      <ul class="media-list">
+        <li class="media">
+          <div class="thumb-wrap"><img class="thumb" src="/assets/img/news/physrig.gif" alt="PhysRig"/><span class="badge">2025.06</span></div>
+          <div class="media-body">
+            <div class="title"><strong>PhysRig</strong> (first author) accepted by ICCV 2025! <a href="https://physrig.github.io" target="_blank">project</a></div>
+            <div class="meta">Acceptance · ICCV 2025</div>
+          </div>
+        </li>
+        <li class="media">
+          <div class="thumb-wrap"><img class="thumb" src="/assets/img/news/snap.jpg" alt="Snap Research"/><span class="badge">2025.06</span></div>
+          <div class="media-body">
+            <div class="title">I join <strong>Snap Research</strong> (NY) in Summer 2025</div>
+            <div class="meta">Internship</div>
+          </div>
+        </li>
+      </ul>
+    </section>
+
+    <!-- PUBLICATIONS with media-left thumbnails -->
+    <section id="publications">
+      <h2>Publications</h2>
+      <div class="muted">Add a 4:3 GIF or JPG/PNG at <code>/assets/img/papers/...</code>. Filenames below are placeholders.</div>
+      <ul class="media-list">
+        <li class="media">
+          <div class="thumb-wrap"><img class="thumb" src="/assets/img/papers/physrig.gif" alt="PhysRig"/><span class="badge">ICCV 2025</span></div>
+          <div class="media-body">
+            <div class="title">PhysRig: Differentiable Physics‑Based Skinning and Rigging Framework for Realistic Articulated Object Modeling</div>
+            <div class="meta"><strong>Hao Zhang*</strong>, Haolan Xu*, Chun Feng, Varun Jampani, Narendra Ahuja</div>
+            <div class="meta"><em>International Conference on Computer Vision (ICCV), 2025</em></div>
+            <div class="links"><a href="https://physrig.github.io" target="_blank">project</a></div>
+          </div>
+        </li>
+        <li class="media">
+          <div class="thumb-wrap"><img class="thumb" src="/assets/img/papers/magicpose4d.gif" alt="MagicPose4D"/><span class="badge">TMLR 2025</span></div>
+          <div class="media-body">
+            <div class="title">MagicPose4D: Crafting Articulated Models with Appearance and Motion Control</div>
+            <div class="meta"><strong>Hao Zhang*</strong>, Di Chang*, Fang Li, Mohammad Soleymani, Narendra Ahuja</div>
+            <div class="meta"><em>Transactions on Machine Learning Research (TMLR), 2025</em></div>
+            <div class="links"><a href="https://boese0601.github.io/magicpose4d/" target="_blank">project</a></div>
+          </div>
+        </li>
+        <li class="media">
+          <div class="thumb-wrap"><img class="thumb" src="/assets/img/papers/s3o.gif" alt="S3O"/><span class="badge">ICML 2024</span></div>
+          <div class="media-body">
+            <div class="title">S3O: A Dual‑Phase Approach for Reconstructing Dynamic Shape and Skeleton of Articulated Objects from Single Monocular Video</div>
+            <div class="meta"><strong>Hao Zhang</strong>, Fang Li, Samyak Rawlekar, Narendra Ahuja</div>
+            <div class="meta"><em>International Conference on Machine Learning (ICML), 2024</em></div>
+            <div class="links"><a href="https://arxiv.org/abs/2405.12607" target="_blank">paper</a></div>
+          </div>
+        </li>
+        <li class="media">
+          <div class="thumb-wrap"><img class="thumb" src="/assets/img/papers/limr.gif" alt="LIMR"/><span class="badge">ICLR 2024</span></div>
+          <div class="media-body">
+            <div class="title">LIMR: Learning Implicit Representation for Reconstructing Articulated Objects</div>
+            <div class="meta"><strong>Hao Zhang</strong>, Fang Li, Samyak Rawlekar, Narendra Ahuja</div>
+            <div class="meta"><em>International Conference on Learning Representations (ICLR), 2024</em></div>
+            <div class="links"><a href="https://openreview.net/forum?id=KQ2i6jazVK" target="_blank">paper</a></div>
+          </div>
+        </li>
+        <li class="media">
+          <div class="thumb-wrap"><img class="thumb" src="/assets/img/papers/csl.jpg" alt="CSL"/><span class="badge">AAAI 2024</span></div>
+          <div class="media-body">
+            <div class="title">CSL: Class‑Agnostic Structure‑Constrained Learning for Segmentation Including the Unseen</div>
+            <div class="meta"><strong>Hao Zhang</strong>, Fang Li, Lu Qi, Ming‑Hsuan Yang, Narendra Ahuja</div>
+            <div class="meta"><em>AAAI Conference on Artificial Intelligence (AAAI), 2024</em></div>
+            <div class="links"><a href="https://arxiv.org/abs/2312.05538" target="_blank">paper</a> · <a href="https://segmentmeifyoucan.com" target="_blank">SMIYC results</a></div>
+          </div>
+        </li>
+        <li class="media">
+          <div class="thumb-wrap"><img class="thumb" src="/assets/img/papers/opennerf.jpg" alt="Open-NeRF"/><span class="badge">WACV 2024</span></div>
+          <div class="media-body">
+            <div class="title">Open‑NeRF: Towards Open Vocabulary NeRF Decomposition</div>
+            <div class="meta"><strong>Hao Zhang</strong>, Fang Li, Narendra Ahuja</div>
+            <div class="meta"><em>WACV, 2024</em></div>
+            <div class="links"><a href="https://openaccess.thecvf.com/content/WACV2024/html/Zhang_Open-NeRF_Towards_Open_Vocabulary_NeRF_Decomposition_WACV_2024_paper.html" target="_blank">paper</a></div>
+          </div>
+        </li>
+      </ul>
+    </section>
+
+    <!-- EXPERIENCE & EDUCATION with logos on the left -->
+    <div class="grid-2">
+      <section id="experience">
+        <h2>Work Experience</h2>
+        <ul class="media-list">
+          <li class="media">
+            <div class="thumb-wrap"><img class="thumb" src="/assets/img/logos/snap.png" alt="Snap"/><span class="badge">2025</span></div>
+            <div class="media-body">
+              <div class="title"><strong>Snap Research</strong> — Research Scientist Intern</div>
+              <div class="meta">New York, USA · 2025 Summer – Now · Supervisors: Bing Zhou, Jian Wang</div>
+            </div>
+          </li>
+          <li class="media">
+            <div class="thumb-wrap"><img class="thumb" src="/assets/img/logos/stability.png" alt="Stability AI"/><span class="badge">2024–2025</span></div>
+            <div class="media-body">
+              <div class="title"><strong>Stability AI</strong> — Research Scientist Intern</div>
+              <div class="meta">2024 Fall – 2025 Summer · Supervisor: Varun Jampani</div>
+            </div>
+          </li>
+          <li class="media">
+            <div class="thumb-wrap"><img class="thumb" src="/assets/img/logos/pixocial.png" alt="Pixocial"/><span class="badge">2024</span></div>
+            <div class="media-body">
+              <div class="title"><strong>Pixocial AI Lab</strong> — Research Scientist Intern</div>
+              <div class="meta">2024 Summer · Supervisor: Haoxiang Li</div>
+            </div>
+          </li>
+          <li class="media">
+            <div class="thumb-wrap"><img class="thumb" src="/assets/img/logos/shanghai_ai_lab.png" alt="Shanghai AI Lab"/><span class="badge">2021–2022</span></div>
+            <div class="media-body">
+              <div class="title"><strong>Shanghai AI Lab</strong> — Research Intern</div>
+              <div class="meta">2021.10 – 2022.6 · Supervisor: Jing Shao</div>
+            </div>
+          </li>
+          <li class="media">
+            <div class="thumb-wrap"><img class="thumb" src="/assets/img/logos/cuhk.png" alt="CUHK-Shenzhen"/><span class="badge">2021</span></div>
+            <div class="media-body">
+              <div class="title"><strong>CUHK, Shenzhen</strong> — Research Assistant</div>
+              <div class="meta">2021.3 – 2021.10 · Supervisor: Ruimao Zhang</div>
+            </div>
+          </li>
+        </ul>
+      </section>
+
+      <section id="education">
+        <h2>Education</h2>
+        <ul class="media-list">
+          <li class="media">
+            <div class="thumb-wrap"><img class="thumb" src="/assets/img/logos/uiuc.png" alt="UIUC"/><span class="badge">Ph.D.</span></div>
+            <div class="media-body">
+              <div class="title"><strong>University of Illinois Urbana‑Champaign (UIUC)</strong></div>
+              <div class="meta">Ph.D. in Computer Vision · 2022–2027 (expected)</div>
+            </div>
+          </li>
+          <li class="media">
+            <div class="thumb-wrap"><img class="thumb" src="/assets/img/logos/usc.png" alt="USC"/><span class="badge">M.S.</span></div>
+            <div class="media-body">
+              <div class="title"><strong>University of Southern California (USC)</strong></div>
+              <div class="meta">M.S. in Electrical & Computer Engineering · 2019–2020</div>
+            </div>
+          </li>
+          <li class="media">
+            <div class="thumb-wrap"><img class="thumb" src="/assets/img/logos/cauc.png" alt="CAUC"/><span class="badge">B.S.</span></div>
+            <div class="media-body">
+              <div class="title"><strong>Civil Aviation University of China (CAUC)</strong></div>
+              <div class="meta">B.S. in Telecommunication Engineering · 2014–2018</div>
+            </div>
+          </li>
+        </ul>
+      </section>
+    </div>
+
+    <!-- ACTIVITIES -->
+    <section id="activities">
+      <h2>Professional Activities</h2>
+      <div class="muted">Conference Reviewer</div>
+      <ul class="media-list">
+        <li class="media">
+          <div class="thumb-wrap"><img class="thumb" src="/assets/img/logos/conferences.png" alt="Conferences"/></div>
+          <div class="media-body">ICLR, NeurIPS, ECCV, CVPR, ICML, AAAI</div>
+        </li>
+      </ul>
+      <div class="muted" style="margin-top:10px">Journal Reviewer</div>
+      <ul class="media-list">
+        <li class="media">
+          <div class="thumb-wrap"><img class="thumb" src="/assets/img/logos/ieee.png" alt="IEEE"/></div>
+          <div class="media-body">IEEE Transactions on Image Processing (TIP)</div>
+        </li>
+      </ul>
+    </section>
+
+  </main>
+
+  <footer>
+    © <span id="year"></span> Hao Zhang. Single‑page site with media‑left cards. Replace placeholders under <code>/assets/img/</code>.
+  </footer>
+
+  <script>
+    (function(){
+      const html = document.documentElement; const btn = document.getElementById('themeBtn'); const saved = localStorage.getItem('hz-theme');
+      if (saved === 'light' || saved === 'dark') html.setAttribute('data-theme', saved);
+      btn.addEventListener('click', ()=>{ const next = html.getAttribute('data-theme') === 'dark' ? 'light' : 'dark'; html.setAttribute('data-theme', next); localStorage.setItem('hz-theme', next); });
+      document.getElementById('year').textContent = new Date().getFullYear();
+    })();
+  </script>
+</body>
+</html>
